@@ -139,33 +139,6 @@
     
     
     <entry>
-      <title>python爬虫</title>
-      <link href="/2023/08/10/python%E7%88%AC%E8%99%AB/"/>
-      <url>/2023/08/10/python%E7%88%AC%E8%99%AB/</url>
-      
-        <content type="html"><![CDATA[<h1>python爬虫</h1><p>在使用Python进行爬虫时，需要先确认所爬取的网站是否合法，以避免侵犯别人的权利。多数网站都有robots.txt文件，其中包含了该网站允许爬取的范围，我们应该先查看该文件并确定自己的爬虫是否在允许的范围内。如果没有明确说明，需要事先获得网站管理员的许可。</p><h2 id="python基础回顾">python基础回顾</h2><p>复习<a href="https://byforacle.github.io/B1og/2023/07/22/python/">python基础</a></p><p><strong>if判断</strong>：用于筛选有用的数据或根据不同的页面结构采取不同的提取器<br><strong>while循环</strong><br><strong>True &amp; False</strong><br><strong>字符串操作</strong>：索引和切片、<code>strip()</code>、<code>split()</code>、<code>replace()</code>、<code>join()</code>、格式化字符串<code>f-string</code><br><strong>列表操作</strong>：索引、切片、增<code>append()</code>删<code>remove()</code>改、range(常用于for循环计数)、查询<br><strong>字典</strong>：增加，修改，与其他数据类型的嵌套<br><strong>字符集</strong>：utf-8、GBK、<code>encode()</code>、<code>decode()</code><br><strong>文件操作</strong><br><strong>函数</strong><br><strong>模块与包</strong>：常用模块（random、time、os、json）</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random, os, time, json</span><br><span class="line"></span><br><span class="line">random.randint()  <span class="comment"># 随机数生成</span></span><br><span class="line">random.choice(<span class="built_in">list</span>)  <span class="comment"># 从列表中随机选择</span></span><br><span class="line">time.time()  <span class="comment"># 生成时间戳</span></span><br><span class="line">time.sleep()  <span class="comment"># 让程序休眠...</span></span><br><span class="line">os.makedirs(<span class="string">&quot;\..\..\..&quot;</span>)  <span class="comment"># 创建文件</span></span><br><span class="line">os.path.join(p1, p2, p3)  <span class="comment"># 路径拼接</span></span><br><span class="line">json.loads(s)  <span class="comment"># 将json类型的字符串转换为字典</span></span><br><span class="line">json.dumps()  <span class="comment"># 将一个python字典转换为json字符串</span></span><br></pre></td></tr></table></figure><p><strong>异常处理</strong></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> 爬虫 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>ctfshow题解-命令执行</title>
       <link href="/2023/08/08/CTFshow/CTFshow2/"/>
       <url>/2023/08/08/CTFshow/CTFshow2/</url>
