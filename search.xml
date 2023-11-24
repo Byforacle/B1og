@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>SquareCTF web题解</title>
+      <link href="/2023/11/24/SquareCTF/"/>
+      <url>/2023/11/24/SquareCTF/</url>
+      
+        <content type="html"><![CDATA[<h1>SquareCTF</h1><h2 id="sandbox">sandbox</h2><p><code>cat flag.txt</code>无回显，过滤空格用<code>&lt;</code>代替</p><p><img src="https://s2.loli.net/2023/11/24/BIGh1uX7A9LNH4J.png" alt="1"></p><h2 id="be-the-admin">Be The Admin</h2><p>cookie身份认证，改为admin的base64即可，注意出于安全性考虑cookie中不能出现<code>=</code>，base64中<code>=</code>用于占位不影响解密，故删除即可</p><p><img src="https://s2.loli.net/2023/11/24/Xt3hpdqaFjIMe1c.png" alt="2"></p><h2 id="just-go-around">Just Go Around</h2><p><code>xxe</code>+内网探测</p><p>看源码发现<code>/post</code>路由，提交查询跳转到<code>/accept</code>，发现可用<code>postXml</code>参数xxe，先读本地文件</p><p><img src="https://s2.loli.net/2023/11/24/LVG14bqUMKADTef.png" alt="31"></p><p>本地没找到flag文件，要找内网ip，用http访问内网拿flag，然后就是各种读文件找线索</p><p>翻了好多好多层之后在<code>/JustGoAround/src/main/resources/application.properties</code>找到一个端口号<code>spring.datasource.url=http://$&#123;ELASTIC_HOST:db&#125;:9200</code>，读<code>/etc/hosts</code>找到一个ip<code>172.21.0.3</code></p><p>直接访问发现不对，多试试找到<code>172.21.0.2</code></p><p>payload:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;!DOCTYPE ANY [&lt;!ENTITY foo SYSTEM &quot;http://172.21.0.2:9200/_search?q=*&quot;&gt;]&gt;&lt;post author=&quot;CTF&quot; id=&quot;0&quot; title=&quot;122&quot;&gt;&lt;message&gt;&amp;foo;&lt;/message&gt;&lt;/post&gt;</span><br></pre></td></tr></table></figure><p><img src="https://s2.loli.net/2023/11/24/bkAafJ4giBScw83.png" alt="32"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> WriteUp </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> XXE </tag>
+            
+            <tag> ssrf </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CISCN 国赛web题目复现</title>
       <link href="/2023/10/13/CISCN/"/>
       <url>/2023/10/13/CISCN/</url>
